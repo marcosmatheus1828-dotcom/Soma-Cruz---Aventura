@@ -1,0 +1,116 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #000;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.screen.active {
+    display: flex;
+}
+
+.bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    
+}
+
+.sprite {
+    position: absolute;
+    z-index: 2;
+    width: 160px;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+}
+
+#player {
+    bottom: 5%;
+    left: 15%;
+    z-index: 10;
+    left: 80%;
+    height: 150px;
+    width: 180px;
+    position: absolute;
+}
+
+#enemy {
+    bottom: 0;
+    left: 800px;
+    height: 150px;
+    z-index: 10;
+    width: auto;
+    position: absolute;
+    transition: transform 0,1s;
+}
+
+#start-btn {
+    position: absolute;
+    bottom: 25%;
+    width: 380px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s;
+}
+
+#start-btn:hover {
+    transform: scale(1.1);
+}
+
+.instructions {
+    position: absolute;
+    bottom: 15%;
+    color: white;
+    font-size: 18px;
+    background: rgba(0,0,0,0.7);
+    padding: 10px 20px;
+    border-radius: 8px;
+    z-index: 3;
+}
+
+.gameover-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 3;
+}
+
+.gameover-box h1 {
+    font-size: 120px;
+    text-shadow: 0 0 20px red, 0 0 40px red;
+    margin-bottom: 20px;
+}
+
+.gameover-box p {
+    font-size: 40px;
+    text-shadow: 0 0 15px white;
+}
+
+.jump{
+    animation:jump 0.5s ease-out;
+}
+
+@keyframes jump{
+    0%, 100% {bottom:5%;}
+    50% {bottom:60%;}
+}

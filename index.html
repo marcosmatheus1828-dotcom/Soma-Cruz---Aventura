@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma Cruz - Aventura</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- MENU -->
+    <div id="menu-screen" class="screen">
+        <img src="images/menu.webp" class="bg">
+        <img id="start-btn" src="./images/start-8870688_640.png" alt="START" onclick="startGame()">
+
+    <div id="menu_screen"  class="screen active" ></div>
+ </div>
+
+    <!-- JOGO -->
+    <div id="game-screen" class="screen">
+        <img src="./images/Gif background.gif" class="bg">
+        <img id="player" src="./images/Soma Cruz.gif" class="sprite" alt="Soma Cruz">
+        <img id="enemy" src="images/inimigo.gif" class="sprite" alt="Inimigo">
+        <div class="instructions">← → MOVA O PERSONAGEM space para pular </div>
+        
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="gameover-screen" class="screen" onclick="restartBattle()">
+        <div class="gameover-box">
+            <h1>GAME OVER</h1>
+            <p>CLICK TO CONTINUE</p>
+        </div>
+    </div>
+
+    <!-- MÚSICAS -->
+    <audio id="menu-audio" loop>
+        <source src="./audio/menu.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="battle-audio" loop>
+        <source src="audio/battle.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
